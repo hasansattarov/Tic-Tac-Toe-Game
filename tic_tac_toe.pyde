@@ -51,7 +51,7 @@ def setup():
         squareYShow = squareYShow + squareHeight
         
         
-    
+#Restart the game when it's over    
 def keyPressed():
     global gameDone,playCounter,playerWin
     
@@ -77,6 +77,7 @@ def mouseReleased():
     if validLocation and removeSquare:
         activeSquares[ whichSquare ] = False
 
+#Check the win conditions and declare a winner
 def checkWin():
     global playerWin
     for i in range( 3 ):
@@ -168,7 +169,8 @@ def draw():
                 text("Press spacebar to play again!", 300,900)
                 for i in range(numSquares):
                     activeSquares[i] = False
-        
+    
+    #Declare the winner
     if player1:
         fill(123)
         rect(400, 0, 200, 50)
